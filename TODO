@@ -1,0 +1,4 @@
+* look at https://github.com/jimhester/lintr
+* Fix successful exit code on package install fails
+* Fix successful exit code on test failures
+* test HTTP endpoint with plumber
