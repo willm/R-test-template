@@ -1,0 +1,14 @@
+version: "3"
+services:
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: sh -c './wait-for-it.sh db:5432 && Rscript --no-save run_tests.R'
+    working_dir: /app
+    links:
+      - db
+  db:
+    build:
+      context: db
+      dockerfile: Dockerfile
