@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: sh -c './wait-for-it.sh db:5432 && Rscript --no-save tests/run_tests.R'
+    command: sh -c "tools/wait-for-it.sh db:5432 && R -e 'devtools::check()'"
     working_dir: /app
     links:
       - db

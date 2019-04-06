@@ -1,6 +1,8 @@
 FROM rocker/r-base
 RUN mkdir /app
-RUN apt-get update - && apt-get install -y libpq-dev
+RUN apt-get update - && apt-get install -y libpq-dev git libssl-dev ssh texlive-latex-base texlive-fonts-recommended libcurl4-openssl-dev libxml2-dev
 WORKDIR /app
-RUN R --vanilla -e 'install.packages(c("testthat", "RPostgreSQL"), repos="http://cran.us.r-project.org")'
+RUN R -e 'install.packages("devtools", repos="http://cran.us.r-project.org")'
+ADD DESCRIPTION /app
+RUN R -e 'devtools::install_deps(dependencies = TRUE)'
 ADD . /app

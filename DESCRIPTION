@@ -1,0 +1,11 @@
+Package: myPackage
+Version: 0.0-1
+Date: 2019-04-05
+Title: My First Collection of Functions
+Maintainer: Joe Developer <Joe.Developer@some.domain.net>
+Author: Joe Developer [aut, cre]
+Imports: testthat, lintr, RPostgreSQL
+Description: A (one paragraph) description of what
+License: GPL (>= 2)
+URL: https://www.r-project.org, http://www.another.url
+BugReports: https://pkgname.bugtracker.url
